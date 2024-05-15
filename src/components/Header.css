@@ -1,0 +1,66 @@
+/* Header.css */
+header {
+    
+    background-color: #F2F4F6;
+    color: white;
+    padding: 10px 20px;
+
+  }
+
+  .header-main{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 200px;
+    padding-left: 200px;
+  }
+
+  
+  .btn-pri{
+    background-color: #161D6F;
+  padding: 7px 20px 7px 20px ;
+  border-radius: 6px;
+  color: #1EE3CF;
+
+    
+    text-decoration: none;
+  }
+
+  .btn-sec{
+    
+  padding: 7px 20px 7px 20px ;
+  border-radius: 6px;
+  color: #161D6F;
+  
+  border-color: #161D6F;
+  border-style: solid;
+    
+    
+    text-decoration: none;
+  }
+
+  .left-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+  }
+  .middle-section ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    text-decoration: none;
+    color: #161D6F;
+    }
+
+    .middle-section li{
+      display: flex;
+      text-decoration: none;
+      color: #161D6F;
+      
+    }
+  
+ 
