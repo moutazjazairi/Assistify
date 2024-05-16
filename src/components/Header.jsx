@@ -2,18 +2,18 @@ import React from 'react'
 import {Link} from "react-router-dom"
 import Logo from '../Assets/Logo.png'
 import "./Header.css";
+import LoginPopup from './LoginPopup';
 
 
 
-
-const Header = () => {
+const Header = ({onLoginClick}) => {
     return (
       
         <header>
           <div className='header-main'>
         <div className="left-section">
           <a className='btn-pri' href="/start"> أبدأ</a>
-          <a className='btn-sec ' href='/login'>تسجيل الدخول</a>
+          <button onClick={onLoginClick} className='btn-sec ' Link to={LoginPopup}>تسجيل الدخول</button>
           
         </div>
         
