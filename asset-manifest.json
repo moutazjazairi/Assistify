@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Assistify/static/css/main.103d1748.css",
+    "main.js": "/Assistify/static/js/main.3359d5ac.js",
+    "static/js/453.432f1dcc.chunk.js": "/Assistify/static/js/453.432f1dcc.chunk.js",
+    "static/media/building.png": "/Assistify/static/media/building.5534cc9bfc6b898cc0d5.png",
+    "index.html": "/Assistify/index.html",
+    "main.103d1748.css.map": "/Assistify/static/css/main.103d1748.css.map",
+    "main.3359d5ac.js.map": "/Assistify/static/js/main.3359d5ac.js.map",
+    "453.432f1dcc.chunk.js.map": "/Assistify/static/js/453.432f1dcc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.103d1748.css",
+    "static/js/main.3359d5ac.js"
+  ]
+}
