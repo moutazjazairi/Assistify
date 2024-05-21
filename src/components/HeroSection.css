@@ -1,9 +1,9 @@
-/* HeroSection.css */
+
 .hero-section {
     background-image: linear-gradient(to top,#ffffff9b , #0a0e3fc3 ) , url('../Assets/building.png') ;
     background-size: cover;
     background-position: center;
-    height: 400px; /* Adjust the height as needed */
+    height: 400px; 
     display: flex;
     justify-content: center;
     align-items: center;

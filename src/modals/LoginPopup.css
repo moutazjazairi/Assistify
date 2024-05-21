@@ -1,0 +1,326 @@
+/* General popup styles */
+.Lpopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+/* Specific to login popup */
+.Lpopup-content {
+  display: flex;
+  background-color: #fff;
+  border-radius: 19px;
+  overflow: hidden;
+  width: 90%;
+  max-width: 650px;
+  flex-direction: column;
+}
+
+.left-section,
+.right-section {
+  display: none; /* Hide on small screens */
+  color: #0A0E3F;
+  
+}
+.right-section{
+  border-radius: 19px;
+  
+}
+.right-section h2{
+  color: #0A0E3F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .left-section,
+  .right-section {
+    display: block;
+  }
+
+  .left-section {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+  }
+
+  .left-section img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .right-section {
+    width: 75%;
+    padding: 20px;
+    position: relative;
+  }
+
+  .Lpopup-content {
+    flex-direction: row;
+  }
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Input fields and buttons */
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  border-color: #000000;
+}
+
+.input-container label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background: #fff;
+  padding: 0 5px;
+  color: #000000;
+}
+
+.submit-button {
+  padding: 10px;
+  background-color: #1EE3CF;
+  color: #0A0E3F;
+  border: none;
+  border-radius: 21px;
+  cursor: pointer;
+  font-size: 21px;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  
+  justify-content: center;
+}
+
+.submit-button:hover {
+  background-color: #138f99;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid #ccc;
+}
+
+.divider::before {
+  margin-right: 10px;
+}
+
+.divider::after {
+  margin-left: 10px;
+}
+.signup-link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 110px;
+  padding-top: 20px;
+  border: none;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border-radius: 14px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.social-button img {
+display: flex;
+flex-direction: row;
+margin-top: 0.73px;
+margin-left: 3.37px;
+
+}
+
+.social-button span {
+  font-size: 20px;
+  line-height: 28px;
+  align-items: right;
+  display: flex;
+  margin-top: 0.73px;
+margin-left: 3.37px;
+
+  justify-content: right;
+  
+}
+
+.social-button:hover {
+  background-color: #f0f0f0;
+}
+
+.social-button.google {
+  background-color: #4285f4;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 167px;
+  height: 60px;
+  border-radius: 21px;
+  gap: 10px;
+}
+
+.social-button.apple {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 167px;
+  height: 60px;
+  border-radius: 21px;
+  gap: 10px;
+}
+
+.social-button.facebook {
+  background-color: #3b5998;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 167px;
+  height: 60px;
+  border-radius: 21px;
+  gap: 10px;
+  
+}
+
+.additional-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.additional-links a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.additional-links a:hover {
+  color: #0056b3;
+}
+
+@media (max-width: 480px) {
+  .social-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 14px; /* Unified font size */
+  justify-content: center; /* Center align text and icon */
+}
+
+.social-button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.social-button:hover {
+  background-color: #f0f0f0;
+}
+
+.social-button.google {
+  background-color: #4285f4;
+  color: #fff;
+}
+
+.social-button.apple {
+  background-color: #000;
+  color: #fff;
+}
+
+.social-button.facebook {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+.additional-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+@media (max-width: 480px) {
+  .additional-links {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.additional-links a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.additional-links a:hover {
+  color: #0056b3;
+}

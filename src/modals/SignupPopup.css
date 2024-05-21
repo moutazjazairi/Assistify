@@ -1,0 +1,206 @@
+.signup-popup {
+    position: fixed;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 00px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .Spopup-content {
+    display: flex;
+  }
+  
+  .Sleft-section {
+    
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f0f0f0;
+      }
+    
+  
+  
+  .Sleft-section img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .Sright-section {
+    width: 75%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .Stop-section {
+    margin-bottom: 20px;
+    padding-top: 40px;
+  }
+  
+  .Stop-section h2 {
+    display: flex;
+    font-size: 30px;
+    margin: 0;
+    color: #333;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Smiddle-section {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  
+.Smiddle-right-section {
+  width: 50%;
+  padding: 20px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.Smiddle-left-section {
+  width: 50%;
+  padding: 20px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+.Sfile-upload-container {
+  margin-bottom: 15px;
+}
+
+.Sfile-upload-container label {
+  display: block;
+  width: 100%;
+  padding: 2px;
+  border: 2px dashed #ccc;
+  border-radius: 21px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #6B48FF33;
+}
+
+.Sfile-upload-container input[type="file"] {
+  display: none; 
+}
+
+.Sfile-upload-container span {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #777;
+  align-items: right;
+}
+
+.Sfile-size {
+  font-size: 14px;
+  color: #777;
+}
+
+.Sinput-container {
+  margin-bottom: 15px;
+}
+
+.Sinput-container label {
+  font-size: 18px;
+  color: #333;
+}
+
+.Sinput-container input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.Smiddle-section {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; 
+}
+  .error {
+    color: red;
+    font-size: 14px;
+  }
+  
+  .submit-button {
+    background-color: #1EE3CF;
+    color: #0A0E3F;
+    
+    padding: 10px 20px;
+    
+    border-radius: 21px;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .Sdivider {
+    margin-bottom: 20px;
+  }
+  
+  .Sdivider span {
+    display: inline-block;
+    padding: 0 10px;
+    color: #777;
+    font-size: 16px;
+  }
+  
+  .Ssocial-buttons {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 60px;
+
+  }
+  
+  .social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    box-shadow: #333;
+  }
+  
+  .social-button:last-child {
+    margin-right: 0;
+  }
+  
+  .social-button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+  }
+  
+  .Sbottom-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
