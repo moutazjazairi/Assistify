@@ -8,6 +8,7 @@ import LoginPopup from './modals/LoginPopup.jsx';
 import SignupPopup from './modals/SignupPopup.jsx';
 import VerificationPopup from './modals/VerificationPopup.jsx'; 
 import AppRoutes from './routes/AppRoutes.jsx';
+import { AuthProvider } from './AuthProvider';
 import LogoutPopup from './modals/LogoutPopup.jsx';
 import {
   openLoginPopup,
@@ -36,12 +37,15 @@ function App() {
     setIsLoggedIn(false);
     setIsLogoutPopupOpen(false);
   };
+
   const handleLogoutClick = () => {
     setIsLogoutPopupOpen(true); 
   };
 
   return (
     <div>
+      <AuthProvider >
+      
       <Header 
         isLoggedIn={isLoggedIn}
         onLoginClick={() => openLoginPopup(setIsLoginPopupOpen, setIsSignupPopupOpen)} 
@@ -50,11 +54,37 @@ function App() {
       <AppRoutes /> 
       <HeroSection />
       <Assetify />
-      {isLoginPopupOpen && <LoginPopup onClose={() => closeLoginPopup(setIsLoginPopupOpen)} onSignup={() => handleSignupClick(setIsSignupPopupOpen, setIsLoginPopupOpen)} onLogin={handleLogin} />}
-      {isSignupPopupOpen && <SignupPopup onClose={() => closeSignupPopup(setIsSignupPopupOpen)} onLogin={() => openLoginPopup(setIsLoginPopupOpen, setIsSignupPopupOpen)} />}
-      {isVerificationPopupOpen && <VerificationPopup onClose={() => closeVerificationPopup(setIsVerificationPopupOpen)} email={email} />}
-      {isLogoutPopupOpen && <LogoutPopup onClose={() => setIsLogoutPopupOpen(false)} onLogout={handleLogout} />}
+      {isLoginPopupOpen && (
+        <LoginPopup 
+          onClose={() => closeLoginPopup(setIsLoginPopupOpen)} 
+          onSignup={() => handleSignupClick(setIsSignupPopupOpen, setIsLoginPopupOpen)} 
+          onLogin={handleLogin} 
+        />
+      )}
+      
+      {isSignupPopupOpen && (
+        
+        <SignupPopup 
+        
+          onClose={() => closeSignupPopup(setIsSignupPopupOpen)} 
+          onLogin={() => openLoginPopup(setIsLoginPopupOpen, setIsSignupPopupOpen)} 
+        />
+      )}
+      {isVerificationPopupOpen && (
+        <VerificationPopup 
+          onClose={() => closeVerificationPopup(setIsVerificationPopupOpen)} 
+          email={email} 
+        />
+      )}
+      {isLogoutPopupOpen && (
+        <LogoutPopup 
+          onClose={() => setIsLogoutPopupOpen(false)} 
+          onLogout={handleLogout} 
+        />
+      )}
+      </AuthProvider>
     </div>
+    
   );
 }
 

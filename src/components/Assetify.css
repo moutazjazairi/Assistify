@@ -10,9 +10,21 @@
 .footer h1{
   color: #FFFFFF;
   padding-top: 107px;
+  text-align: center;
 }
 
 .footer p{
 color: #1EE3CF;
 padding-bottom: 20px;
+text-align: center;
+}
+
+@media (max-width: 992px) {
+  .footer h1 {
+    padding-top: 10px; /* Reduce padding for smaller screens */
+  }
+  
+  .footer p {
+    padding-bottom: 10px; /* Reduce padding for smaller screens */
+  }
 }

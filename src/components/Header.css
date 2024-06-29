@@ -1,84 +1,140 @@
-
 header {
-    
-    background-color: #F2F4F6;
-    color: white;
-    padding: 10px 20px;
+  background-color: #F2F4F6;
+  color: white;
+  padding: 10px 20px;
+}
 
-  }
+.header-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 200px;
+  padding-left: 200px;
+}
 
-  .header-main{
+.hamburger-menu {
+  display: none; /* Initially hide the hamburger menu icon */
+  cursor: pointer;
+}
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 200px;
-    padding-left: 200px;
-  }
+.nav-links {
+  display: flex;
+  justify-content: center; /* Center the links */
+  align-items: center;
+  gap: 25px;
+  text-decoration: none;
+  color: #161D6F;
+}
 
-  
-  .btn-pri{
-    background-color: #161D6F;
-  padding: 7px 20px 7px 20px ;
+.nav-links li {
+  list-style: none; /* Remove bullet points */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #161D6F;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #007bff; /* Change to desired hover color */
+}
+
+.btn-pri {
+  background-color: #161D6F;
+  padding: 7px 20px;
   border-radius: 6px;
   color: #1EE3CF;
+  text-decoration: none;
+}
 
-    
-    text-decoration: none;
-  }
-
-  .btn-sec{
-    
-  padding: 7px 20px 7px 20px ;
+.btn-sec {
+  padding: 7px 20px;
   border-radius: 6px;
   color: #161D6F;
-  
   border-color: #161D6F;
   border-style: solid;
-    
-    
-    text-decoration: none;
+  text-decoration: none;
+}
+
+.left-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.middle-section ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.hright-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.himg {
+  justify-content: center;
+  display: flex;
+  padding-left: 20px;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .header-main {
+    flex-direction: column; /* Change flex direction to column */
+    padding: 10px; /* Adjust padding for responsiveness */
   }
 
-  .left-section{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 32px;
+  .hamburger-menu {
+    display: block; /* Show the hamburger menu icon on mobile */
   }
-  .middle-section ul{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-    text-decoration: none;
-    color: #161D6F;
-    }
 
-    .middle-section li{
-      display: flex;
-      text-decoration: none;
-      color: #161D6F;
-      
-      
-    }
-    .hright-section{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-left: 40px;
-      padding-top: 10px;
-      padding-left: 30px;
-    }
-    .himg{
-      margin-left: 30px;
-      justify-content: center;
-      display: flex;
-      padding-left: 20px;
-    }
-    .no-underline{
-      text-decoration: none;
-    }
+  .content {
+    display: none; /* Initially hide the content */
+    flex-direction: column; /* Stack items in a column */
+    align-items: center; /* Center items horizontally */
+  }
   
- 
+  .content.active {
+    display: flex; /* Show content when active class is applied */
+  }
+
+  .nav-links {
+    display: flex; /* Show the navigation links */
+    flex-direction: column; /* Stack links vertically */
+    text-align: center; /* Center text */
+    padding: 10px 0;
+  }
+
+  .btn-pri, .btn-sec {
+    width: auto; /* Allow buttons to take their natural width */
+    margin-top: 10px; /* Add margin */
+  }
+
+  
+}
+
+
+@media (min-width: 769px) {
+  .content {
+    display: flex; /* Always show content on larger screens */
+  }
+}
+
+
+/* Media query for smaller laptop screens */
+@media (max-width: 992px) {
+  .header-main {
+    padding: 40px 20px; /* Adjust padding for responsiveness */
+  }
+}
+

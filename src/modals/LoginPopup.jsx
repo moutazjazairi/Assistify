@@ -1,26 +1,27 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './LoginPopup.css';
 import B1 from "../Assets/B1.png";
 import SignupPopup from './SignupPopup';
-import VerificationPopup from './VerificationPopup';
 import path4 from "../Assets/path4.png";
 import Google from "../Assets/Google.png";
 import Facebook from "../Assets/Facebook.png";
+import { useAuthToken } from './useAuthToken';
+import { useNavigate } from 'react-router-dom';
+import { refreshToken } from './refreshToken';
+
 
 function LoginPopup({ onClose, onSignup, onLogin }) {
+  const { getToken, setToken, removeToken } = useAuthToken();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
-    password: ''
+    password: '',
+    phone_number: '' 
   });
   const [errors, setErrors] = useState({});
-  const [isVerificationPopupOpen, setIsVerificationPopupOpen] = useState(false);
-  const [isSignupPopupOpen, setIsSignupPopupOpen] = useState(false);
-  const [code,setCode]=useState(['','','','','',''])
-
-  const handleLogin = () => {
-    onClose(); // Close login popup
-    setIsVerificationPopupOpen(true); // Open verification popup
-  };
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,20 +42,83 @@ function LoginPopup({ onClose, onSignup, onLogin }) {
     if (!formData.password) {
       errors.password = 'Please enter a valid password';
     }
+
+    if (!formData.phone_number) {
+      errors.phone_number = 'Please enter a phone number';
+    } else if (!/^\d+$/.test(formData.phone_number)) {
+      errors.phone_number = 'Please enter a valid phone number';
+    }
+
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      setIsVerificationPopupOpen(true);
-       // Simulate login
+      try {
+        setLoading(true);
+        setErrorMessage('');
+        
+        const response = await axios.post('https://task5-riham-esmail.trainees-mad-s.com/api/auth/login', formData, {
+          headers: {
+            'Accept': 'application/json',
+          }
+        });
+
+        if (response.status === 200) {
+          const {accessToken, refreshToken} = response.data.data;
+          localStorage.setItem('accessToken', accessToken);
+         
+          localStorage.setItem('refreshToken', refreshToken);
+          onLogin(); 
+          onClose(); 
+          
+          
+        } else {
+          setErrorMessage('Failed to login. Please check your credentials.');
+        }
+      } catch (error) {
+        if (error.response && error.response.status === 401) {
+          // Token expired, try refreshing
+          try {
+            const newAccessToken = await refreshToken(localStorage.getItem('refreshToken'));
+            localStorage.setItem('accessToken', newAccessToken);
+            // Retry original request
+            const response = await axios.post('https://task5-riham-esmail.trainees-mad-s.com/api/auth/login', formData, {
+              headers: {
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${newAccessToken}`
+              }
+            });
+            if (response.status === 200) {
+              const { accessToken, refreshToken } = response.data.data;
+              localStorage.setItem('accessToken', accessToken);
+              localStorage.setItem('refreshToken', refreshToken);
+              onLogin();
+              onClose();
+            } else {
+              setErrorMessage('Failed to login after refresh. Please try again later.');
+            }
+          } catch (refreshError) {
+            console.error('Error refreshing token:', refreshError.message);
+            setErrorMessage('Failed to refresh token. Please try again later.');
+          }
+        } else {
+          console.error('Error:', error.message);
+          setErrorMessage(`Error: ${error.message}`);
+        }
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
   const handleSignupClick = () => {
-    setIsSignupPopupOpen(true);
+    onSignup(); 
+    onClose(); 
+    console.log('Signup button clicked...');
+    
   };
 
   return (
@@ -90,7 +154,21 @@ function LoginPopup({ onClose, onSignup, onLogin }) {
                 <label>كلمة المرور</label>
                 {errors.password && <div className="error">{errors.password}</div>}
               </div>
-              <button type="submit" className="submit-button">تسجيل الدخول</button>
+              <div className="input-container">
+                <input
+                  type="text"
+                  name="phone_number"
+                  value={formData.phone_number}
+                  onChange={handleChange}
+                  required
+                />
+                <label>رقم الهاتف</label>
+                {errors.phone_number && <div className="error">{errors.phone_number}</div>}
+              </div>
+              <button type="submit" className="submit-button" disabled={loading}>
+                {loading ? 'Processing...' : 'تسجيل الدخول'}
+              </button>
+              {errorMessage && <div className="error-message">{errorMessage}</div>}
             </form>
           </div>
           <div className="signup-link">
@@ -113,8 +191,7 @@ function LoginPopup({ onClose, onSignup, onLogin }) {
           </div>
         </div>
       </div>
-      {isVerificationPopupOpen && <VerificationPopup email={formData.email} onClose={() => setIsVerificationPopupOpen(false)} onVerify={onLogin} />}
-      {isSignupPopupOpen && <SignupPopup onClose={() => setIsSignupPopupOpen(false)} />}
+      
     </div>
   );
 }
