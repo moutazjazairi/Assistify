@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Assistify/static/css/main.35016b4c.css",
-    "main.js": "/Assistify/static/js/main.60221f06.js",
+    "main.css": "/Assistify/static/css/main.53aa27bf.css",
+    "main.js": "/Assistify/static/js/main.991bca19.js",
     "static/js/453.432f1dcc.chunk.js": "/Assistify/static/js/453.432f1dcc.chunk.js",
     "static/media/building.png": "/Assistify/static/media/building.5534cc9bfc6b898cc0d5.png",
     "static/media/B1.png": "/Assistify/static/media/B1.007237e197e0bed88283.png",
     "index.html": "/Assistify/index.html",
-    "main.35016b4c.css.map": "/Assistify/static/css/main.35016b4c.css.map",
-    "main.60221f06.js.map": "/Assistify/static/js/main.60221f06.js.map",
+    "main.53aa27bf.css.map": "/Assistify/static/css/main.53aa27bf.css.map",
+    "main.991bca19.js.map": "/Assistify/static/js/main.991bca19.js.map",
     "453.432f1dcc.chunk.js.map": "/Assistify/static/js/453.432f1dcc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.35016b4c.css",
-    "static/js/main.60221f06.js"
+    "static/css/main.53aa27bf.css",
+    "static/js/main.991bca19.js"
   ]
 }
