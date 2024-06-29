@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const VerificationPopup = ({ onClose, email, onVerify }) => {
   const [code, setCode] = useState(['', '', '', '', '', '']);
-  const [timer, setTimer] = useState(260); // 4 minutes and 20 seconds
+  const [timer, setTimer] = useState(260); 
   const [canResend, setCanResend] = useState(false);
   const [resendMessage, setResendMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -40,16 +40,16 @@ const VerificationPopup = ({ onClose, email, onVerify }) => {
       });
 
       if (response.status === 200) {
-        // Verification successful
+        
         console.log('Email verified successfully!');
-        onVerify(); // Trigger callback to handle successful verification
-        onClose(); // Close verification popup
+        onVerify(); 
+        onClose(); 
       } else {
-        // Handle other status codes if needed
+       
         setErrorMessage('Failed to verify email. Please try again.');
       }
     } catch (error) {
-      // Handle network errors or other issues
+     
       console.error('Error verifying email:', error);
       setErrorMessage('Failed to verify email. Please try again.');
     }

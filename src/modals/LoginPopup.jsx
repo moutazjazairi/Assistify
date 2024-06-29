@@ -80,11 +80,11 @@ function LoginPopup({ onClose, onSignup, onLogin }) {
         }
       } catch (error) {
         if (error.response && error.response.status === 401) {
-          // Token expired, try refreshing
+         
           try {
             const newAccessToken = await refreshToken(localStorage.getItem('refreshToken'));
             localStorage.setItem('accessToken', newAccessToken);
-            // Retry original request
+           
             const response = await axios.post('https://task5-riham-esmail.trainees-mad-s.com/api/auth/login', formData, {
               headers: {
                 'Accept': 'application/json',

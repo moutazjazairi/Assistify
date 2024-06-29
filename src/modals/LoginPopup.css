@@ -354,8 +354,8 @@ margin-left: 3.37px;
   border-radius: 5px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  font-size: 14px; /* Unified font size */
-  justify-content: center; /* Center align text and icon */
+  font-size: 14px; 
+  justify-content: center; 
 }
 
 .social-button img {

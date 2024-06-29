@@ -48,18 +48,18 @@
   
   @media (max-width: 768px) {
     .hero-content h1 {
-      font-size: 2rem; /* Adjusted font size for smaller screens */
+      font-size: 2rem; 
     }
     
     .hero-content p {
-      font-size: 1rem; /* Adjusted font size for smaller screens */
+      font-size: 1rem; 
     }
   }
   
-  /* Media query for smaller laptop screens */
+ 
   @media (max-width: 992px) {
     .hero-section {
-      height: 300px; /* Adjusted height for smaller laptop screens */
+      height: 300px; 
     }
   }
   

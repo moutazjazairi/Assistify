@@ -1,4 +1,4 @@
-// useAuthToken.js
+
 import { useState } from 'react';
 
 export const useAuthToken = () => {

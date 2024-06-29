@@ -15,7 +15,7 @@ const Header = ({ isLoggedIn, onLoginClick, onLogoutClick }) => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
-        setMenuOpen(false); // Close menu if screen size is larger than 768px
+        setMenuOpen(false); 
       }
     };
 
@@ -32,6 +32,7 @@ const Header = ({ isLoggedIn, onLoginClick, onLogoutClick }) => {
         <div className='hamburger-menu' onClick={toggleMenu}>
           ☰
         </div>
+        <div className={`content ${menuOpen ? 'active' : ''}`}>
         <div className='left-section'>
           <a className='btn-pri'>أبدأ</a>
           {isLoggedIn ? (
@@ -40,6 +41,9 @@ const Header = ({ isLoggedIn, onLoginClick, onLogoutClick }) => {
             <button onClick={onLoginClick} className='btn-sec'>Login</button>
           )}
         </div>
+        </div>
+        
+        <div className={`content ${menuOpen ? 'active' : ''}`}>
         <div className='middle-section'>
           <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
             <li><Link to='/realEstate' className='no-underline'>العقارات</Link></li>
@@ -49,13 +53,15 @@ const Header = ({ isLoggedIn, onLoginClick, onLogoutClick }) => {
             <li><Link to='/More' className='no-underline'>المزيد</Link></li>
           </ul>
         </div>
+        </div>
+       
         <div className='hright-section'>
           <img src={Logo} className='himg' alt='Logo' />
         </div>
       </div>
-      <div className={`content ${menuOpen ? 'active' : ''}`}>
-        {/* Content here */}
-      </div>
+      
+      
+      
     </header>
   );
 }

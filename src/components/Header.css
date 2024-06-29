@@ -14,13 +14,13 @@ header {
 }
 
 .hamburger-menu {
-  display: none; /* Initially hide the hamburger menu icon */
+  display: none; 
   cursor: pointer;
 }
 
 .nav-links {
   display: flex;
-  justify-content: center; /* Center the links */
+  justify-content: center; 
   align-items: center;
   gap: 25px;
   text-decoration: none;
@@ -28,7 +28,7 @@ header {
 }
 
 .nav-links li {
-  list-style: none; /* Remove bullet points */
+  list-style: none; 
 }
 
 .nav-links li a {
@@ -38,7 +38,7 @@ header {
 }
 
 .nav-links li a:hover {
-  color: #007bff; /* Change to desired hover color */
+  color: #007bff; 
 }
 
 .btn-pri {
@@ -71,6 +71,12 @@ header {
   align-items: center;
   gap: 25px;
 }
+.hright-section  ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
 
 .hright-section {
   display: flex;
@@ -90,34 +96,34 @@ header {
 
 @media (max-width: 768px) {
   .header-main {
-    flex-direction: column; /* Change flex direction to column */
-    padding: 10px; /* Adjust padding for responsiveness */
+    flex-direction: column; 
+    padding: 10px; 
   }
 
   .hamburger-menu {
-    display: block; /* Show the hamburger menu icon on mobile */
+    display: block; 
   }
 
   .content {
-    display: none; /* Initially hide the content */
-    flex-direction: column; /* Stack items in a column */
-    align-items: center; /* Center items horizontally */
+    display: none; 
+    flex-direction: column; 
+    align-items: center; 
   }
   
   .content.active {
-    display: flex; /* Show content when active class is applied */
+    display: flex; 
   }
 
   .nav-links {
-    display: flex; /* Show the navigation links */
-    flex-direction: column; /* Stack links vertically */
-    text-align: center; /* Center text */
+    display: flex; 
+    flex-direction: column; 
+    text-align: center; 
     padding: 10px 0;
   }
 
   .btn-pri, .btn-sec {
-    width: auto; /* Allow buttons to take their natural width */
-    margin-top: 10px; /* Add margin */
+    width: auto; 
+    margin-top: 10px; 
   }
 
   
@@ -126,15 +132,15 @@ header {
 
 @media (min-width: 769px) {
   .content {
-    display: flex; /* Always show content on larger screens */
+    display: flex; 
   }
 }
 
 
-/* Media query for smaller laptop screens */
+
 @media (max-width: 992px) {
   .header-main {
-    padding: 40px 20px; /* Adjust padding for responsiveness */
+    padding: 40px 20px; 
   }
 }
 

@@ -154,7 +154,7 @@ function SignupPopup({ onClose, onLogin, onVerify }) {
       if (response.status === 200) {
         setSuccessMessage('Verification successful!');
         onLogin();
-        navigate('/More');  // Adjust the route as needed
+        navigate('/More');  
       } else {
         setErrorMessage('Verification failed. Please try again.');
       }

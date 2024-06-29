@@ -1,8 +1,8 @@
-// refreshToken.js
+
 
 import axios from 'axios';
 
-const baseURL = 'https://task5-riham-esmail.trainees-mad-s.com/api/auth/refresh'; // Replace with your API base URL
+const baseURL = 'https://task5-riham-esmail.trainees-mad-s.com/api/auth/refresh'; 
 
 export const refreshToken = async (refreshToken) => {
   try {
